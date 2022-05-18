@@ -128,6 +128,12 @@ To run it, type the following into the terminal
    nodemon
    ```
 
+The website will be opened at ```http://localhost:3000```
+
+For admin interface use ```http://localhost:3000/admin/login```
+
+For user interface use ```http://localhost:3000/users/login```
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
