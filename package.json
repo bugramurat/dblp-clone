@@ -1,0 +1,28 @@
+{
+  "name": "neo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["nodejs", "neo4j", "express", "login"],
+  "author": "Bugra Murat",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "*",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.4.2",
+    "express": "*",
+    "express-session": "^1.17.3",
+    "flash": "^1.1.0",
+    "morgan": "*",
+    "mysql": "^2.18.1",
+    "neo4j-driver": "^4.4.5",
+    "neo4jd3": "0.0.5",
+    "neovis.js": "^1.6.0",
+    "passport": "^0.5.2",
+    "popoto": "^3.0.2"
+  }
+}

@@ -1,0 +1,258 @@
+<nav class="navbar">
+    <p class="lead pb-1 pt-3 m-0" style="left: 0">Welcome <%= uname %> (<%= user_id %>)</p>
+    <a href="http://localhost:3000/visulization" id="vis">visulization</a>
+    <a href="/admin/logout" class="btn btn-secondary" id="logout__button">Logout</a>
+</nav>
+
+<div id="main__container">
+    <section id="form__section">
+        <h3 id="form__title">Add information</h3>
+        <form method="post" action="/add" id="form">
+            <input type="text" name="author_name" placeholder="author name" required>
+            <br>
+            <input type="text" name="author_surname" placeholder="author surname" required>
+            <br>
+            <input type="text" name="article_title" placeholder="article title">
+            <br>
+            <input type="text" name="article_year" placeholder="article year">
+            <br>
+            <input type="text" name="journal_type" placeholder="journal type">
+            <br>
+            <input type="text" name="journal_name" placeholder="journal name">
+            <br>
+            <input type="submit" value="Submit" id="submit__button">
+        </form>
+    </section>
+    <section id="search__section">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="search for authors or articles...">
+        <div id="articles__section">
+            <h1>Articles</h1>
+            <ul id="articles__list">
+                <% let i=0 %>
+        <% articles.forEach(function(article){ %>
+            <li class="article">
+                <span class="author">
+                <% articleCollaborators[i].forEach(function(author){ %>
+                    <a href="http://localhost:3000/admin/authors/<%= author.id %>" style="margin-right: 0.2rem;"><%= author.name %> <%= author.surname %></a>
+                            <% }) %>
+                        </span>
+                                <p style="font-weight: 700;">
+                                    <span class="article__title"><%= article.title %></span>
+                                    
+                                        <%= article.year %>
+                                </p>
+                                <p>
+                                    <%= journals[i].name %>
+                                <%= journals[i].type %>
+                                </p style="margin-bottom: 2rem;">
+                                
+
+            </li>
+
+            <% i++ %>
+                <% }) %>
+</ul>
+    </section>
+        </div>
+        
+</div>
+
+
+
+
+<!-- <h1>Authors</h1>
+<ul>
+    <% authors.forEach(function(author){ %>
+        <li>
+            <a href="http://localhost:3000/admin/authors/<%= author.id %>" ><%= author.name %> <%= author.surname %></a>
+
+        </li>
+        <% }) %>
+</ul> -->
+
+<!-- <h1>Journals</h1>
+<ul>
+    <% journals.forEach(function(journal){ %>
+        <li>
+            <%= journal.name %>
+                (<%= journal.type %>)
+        </li>
+        <% }) %>
+</ul> -->
+
+<link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
+            rel="stylesheet"
+            href="https://bootswatch.com/5/litera/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"
+        />
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #vis{
+        letter-spacing: .5rem;
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    #main__container{
+        display: grid;
+        grid-template-columns: 20% 70%;
+        justify-content: center;
+        
+        column-gap: 50px;
+        margin-top: 3rem;
+    }
+
+    #form__section,
+    #search__section{
+        padding: 20px;
+        box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.2);
+        border-radius: 20px;
+        height: 80vh;
+
+    }
+    #form__title{
+        margin-bottom: 50px;
+    }
+    #form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        
+    }
+    input{
+        border-radius: 20px;
+        padding: 5px 10px 5px 10px;
+        border: none;
+        background-color: rgb(245, 245, 245);
+        transition: background 300ms ease-in-out;
+    }
+    input:hover{
+        background-color: rgba(220, 220, 220, 0.827);
+    }
+    input:focus{
+        background-color: #fff;
+        border: 5px solid rgba(105, 51, 255, 0.49);
+        outline: none;
+    }
+    #submit__button{
+        background-color: rgb(106, 51, 255);
+        color: #fff;
+        transition: 300ms ease-in-out;
+    }
+    #submit__button:hover{
+        background-color: rgb(74, 44, 158);
+        letter-spacing: 1rem;
+        border: 5px solid rgb(106, 51, 255);
+    }
+
+    #logout__button{
+        background-color: #fff;
+        color: gray;
+        border: none;
+        border-radius: 20px;
+        transition: 300ms ease-in-out;
+    }
+    #logout__button:hover{
+        color: #fff;
+        background-color: rgb(255, 51, 51);
+        letter-spacing: .5rem;
+    }
+
+    #myInput{
+        margin-bottom: 20px;
+        width: 30%;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    
+    #articles__section{
+        padding: 20px;
+    }
+    #articles__list{
+        height: 50vh;
+        padding: 10px;
+        overflow: auto;
+        display: grid;
+        row-gap: 10px;
+    }
+    .article{
+        background-color: rgba(222, 189, 255, 0.363);
+        border-radius: 20px;
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+        transition: 300ms ease-in-out;
+    }
+    .article:hover{
+        background-color: rgba(211, 168, 255, 0.363);
+    }
+
+    a{
+        text-decoration: none;
+        background-color: rgb(222, 207, 255);
+        color:rgb(106, 51, 255);
+        padding: 3px 5px 3px 5px;
+        border-radius: 20px;
+        font-size: .9rem;
+        font-weight: 700;
+        transition: 300ms ease-in-out;
+    }
+    a:hover{
+        background-color: rgb(188, 167, 234);
+        text-decoration: none;
+        color: rgb(106, 51, 255);
+    }
+</style>
+
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, i, txtValue, articlesTemp, articleTitles = [], articles, authorsTemp, authorNames = [];
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        articlesTemp = document.getElementsByClassName("article__title");
+        articles = document.getElementsByClassName("article");
+        authorsTemp = document.getElementsByClassName("author");
+
+        for (let j = 0; j < articlesTemp.length; j++) {
+            articleTitles[j] = articlesTemp[j].innerHTML;
+        }
+        for (let j = 0; j < authorsTemp.length; j++) {
+            authorNames[j] = authorsTemp[j].innerText;
+        }
+
+        let articleCount = 0;
+        // Loop through all table rows, and hide those who don't match the search query
+        articleTitles.forEach(function (article) {
+            txtValue = article + " " + authorNames[articleCount];
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                articles[articleCount].style.display = "";
+            } else {
+                articles[articleCount].style.display = "none";
+            }
+            articleCount++;
+        })
+    }
+</script>

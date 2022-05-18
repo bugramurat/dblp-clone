@@ -1,0 +1,33 @@
+<body onload="draw()">
+    <div id="viz" style="width: 100%; height: 100%;"></div>
+</body>
+
+<script>
+    function draw() {
+        // How to connect to neo4j and how to style our visulization
+        var config = {
+            container_id: "viz",
+            server_url: "neo4j://ea9ce623.databases.neo4j.io",
+            server_user: "neo4j",
+            server_password: "B6VEBr5fqpKlP287qmB7r3YlBwP9fO-pU5oQAA79HYk",
+            labels: {
+                "Author": {
+                    "size": 10,
+                    "image": "https://i.pinimg.com/564x/f5/6b/ae/f56baef86aed6c261c422402aab59065.jpg"
+                },
+            },
+            relationships: {
+                "COAUTHOR": {
+                    "thickness": "weight",
+                    "community": "community",
+                }
+            },
+            initial_cypher: "MATCH (n:Author)-[s:COAUTHOR]->(r:Author) WHERE ID(n)= <%= id %> RETURN n, r, s",
+            arrows: true,
+        }
+
+        var viz = new NeoVis.default(config);
+        viz.render();
+    }
+</script>
+<script src="https://cdn.neo4jlabs.com/neovis.js/v1.5.0/neovis.js"></script>

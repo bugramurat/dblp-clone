@@ -1,0 +1,100 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <h1 class="text-center mb-3">
+            <i class="fas fa-sign-in-alt"></i> Admin Login
+        </h1>
+        <div id="main__section">
+
+            <%- include("./partials/messages.ejs") %>
+                <form action="/admin/login" method="POST" id="form">
+                    <input type="text" id="uname" name="uname" placeholder="username" />
+
+                    <input type="password" id="password" name="password" placeholder="password" />
+                    <button type="submit" id="submit__button">
+                        Login
+                    </button>
+                </form>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://bootswatch.com/5/litera/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+
+<style>
+    #main__section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+
+    }
+
+    input {
+        border-radius: 20px;
+        padding: 5px 10px 5px 10px;
+        border: none;
+        background-color: rgb(245, 245, 245);
+        transition: background 300ms ease-in-out;
+        width: min-content;
+    }
+
+    input:hover {
+        background-color: rgba(220, 220, 220, 0.827);
+    }
+
+    input:focus {
+        background-color: #fff;
+        border: 5px solid rgba(105, 51, 255, 0.49);
+        outline: none;
+    }
+
+    #submit__button {
+        background-color: rgb(106, 51, 255);
+        color: #fff;
+        transition: 300ms ease-in-out;
+        border-radius: 20px;
+        border: none;
+        padding: 5px 10px 5px 10px;
+        width: 200px
+    }
+
+    #submit__button:hover {
+        background-color: rgb(74, 44, 158);
+        letter-spacing: 1rem;
+        border: 5px solid rgb(106, 51, 255);
+    }
+
+    a {
+        text-decoration: none;
+        background-color: rgb(222, 207, 255);
+        color: rgb(106, 51, 255);
+        padding: 3px 5px 3px 5px;
+        border-radius: 20px;
+        font-size: .9rem;
+        font-weight: 700;
+        transition: 300ms ease-in-out;
+    }
+
+    a:hover {
+        background-color: rgb(188, 167, 234);
+        text-decoration: none;
+        color: rgb(106, 51, 255);
+    }
+</style>
