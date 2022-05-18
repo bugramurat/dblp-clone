@@ -77,6 +77,8 @@ A web application consisting of user and admin interfaces, adding authors and ar
 
 * [Neo4j](https://neo4j.com)
 * [neovis.js](https://github.com/neo4j-contrib/neovis.js/)
+* [Node.js](https://nodejs.org/)
+* [Express.js](https://expressjs.com)
 * [Javascript](https://www.javascript.com)
 * [XAMPP](https://www.apachefriends.org/index.html)
 * [MySQL](https://www.mysql.com)
@@ -200,7 +202,7 @@ Project Link: [https://github.com/bugramurat/dblp-clone](https://github.com/bugr
 [issues-shield]: https://img.shields.io/github/issues/bugramurat/dblp-clone.svg?style=for-the-badge
 [issues-url]: https://github.com/bugramurat/dblp-clone/issues
 [license-shield]: https://img.shields.io/github/license/bugramurat/dblp-clone.svg?style=for-the-badge
-[license-url]: https://github.com/bugramurat/dblp-clone/blob/master/LICENSE
+[license-url]: https://github.com/bugramurat/dblp-clone/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/bugramurat
 [product-screenshot]: images/screenshot.png
