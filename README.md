@@ -108,13 +108,13 @@ Download and install [XAMPP Control Panel](https://www.apachefriends.org/index.h
    ```sh
    npm install
    ```
-4. For _neo4j connection_ enter your url, username and password in `index.js`
+4. For **neo4j connection** enter your url, username and password in `index.js`
    ```js
    60   const uri = "ENTER YOUR URL";
    61   const user = "ENTER YOUR USERNAME";
    62   const password = "ENTER YOUR PASSWORD";
    ```
-5. For _mysql connection_ enter your port, username, password, database name
+5. For **mysql connection** enter your port, username, password, database name
    ```js
    12   port: 3307,
    13   user: "root",
