@@ -121,7 +121,7 @@ Download and install [XAMPP Control Panel](https://www.apachefriends.org/index.h
    14   password: "",
    15   database: "blobfile",
    ```
-   and your table name in `users.js`
+   and your table name in `users.js` and `index.js` (line numbers will be different in index.js)
    ```js
    41   "SELECT password, id from users where email = ?",
    ```
