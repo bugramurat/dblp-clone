@@ -108,13 +108,24 @@ Download and install [XAMPP Control Panel](https://www.apachefriends.org/index.h
    ```sh
    npm install
    ```
-4. Enter your url, username and password in `index.js`
+4. For _neo4j connection_ enter your url, username and password in `index.js`
    ```js
    60   const uri = "ENTER YOUR URL";
    61   const user = "ENTER YOUR USERNAME";
    62   const password = "ENTER YOUR PASSWORD";
    ```
-5. Open XAMPP and enable Apache and MySQL 
+5. For _mysql connection_ enter your port, username, password, database name
+   ```js
+   12   port: 3307,
+   13   user: "root",
+   14   password: "",
+   15   database: "blobfile",
+   ```
+   and your table name in `users.js`
+   ```js
+   41   "SELECT password, id from users where email = ?",
+   ```
+6. Open XAMPP and enable Apache and MySQL 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
